@@ -1,1 +1,85 @@
-locket gold thu ha
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>locket gold thu hà</title>
+  <style>
+    :root{
+      --pink1:#fff0f6;
+      --pink2:#ffd6e7;
+      --accent:#ff69b4;
+      --accent2:#ff3ba3;
+      --ink:#a30f5e;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--pink1), #ffffff 40%, var(--pink2));
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+    }
+    .card{
+      text-align:center;
+      padding:32px 28px;
+      background:rgba(255,255,255,.65);
+      border-radius:20px;
+      box-shadow:0 12px 36px rgba(255,105,180,.18);
+      backdrop-filter: blur(6px);
+    }
+    h1{
+      margin:0 0 14px;
+      font-size:28px;
+      color:var(--ink);
+      letter-spacing:.3px;
+      text-transform:capitalize;
+    }
+    p{margin:0 0 20px;color:#6b2a4b}
+    .btn{
+      appearance:none;
+      border:0;
+      padding:12px 22px;
+      font-size:16px;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      color:#fff;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(255, 88, 158, .35);
+      transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow:0 10px 26px rgba(255, 88, 158, .4); }
+    .btn:active{ transform: translateY(0); box-shadow:0 6px 14px rgba(255, 88, 158, .35); }
+    .btn:focus{ outline:2px solid #ffc2e0; outline-offset:3px }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>locket gold thu hà</h1>
+    <p>CẤU HÌNH LOCKET GOLD VIP</p>
+    <button class="btn" id="openBtn">Mở trang mới</button>
+  </main>
+
+  <script>
+    document.getElementById('openBtn').addEventListener('click', function(){
+      // Phát hiện nếu không phải điện thoại thì chặn
+      const ua = navigator.userAgent.toLowerCase();
+      const isMobile = /iphone|ipad|ipod|android|mobile/.test(ua);
+      if (!isMobile) {
+        alert('Chức năng này chỉ dùng được trên điện thoại!');
+        return;
+      }
+      // Mở trang mới nếu là mobile
+      const url = prompt('Nhập URL bạn muốn mở:', 'https://thuhalk.netlify.app/locket.mobileconfig');
+      if (!url) return;
+      try {
+        window.open(url, '_blank', 'noopener');
+      } catch (e) {
+        alert('Không thể mở trang. Vui lòng kiểm tra lại URL.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -56,30 +56,23 @@
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>locket gold thu hà</h1>
-    <p>CẤU HÌNH LOCKET GOLD VIP</p>
-    <button class="btn" id="openBtn">Mở trang mới</button>
+  <main class="card" id="content">
+    <h1>THU HÀ ĐẸP GÁI</h1>
+    <p>LOCKET GOLD VIP </p>
+    <button class="btn" id="openBtn">TẢI VỀ</button>
   </main>
 
   <script>
-    document.getElementById('openBtn').addEventListener('click', function(){
-      // Phát hiện nếu không phải điện thoại thì chặn
-      const ua = navigator.userAgent.toLowerCase();
-      const isMobile = /iphone|ipad|ipod|android|mobile/.test(ua);
-      if (!isMobile) {
-        alert('Chức năng này chỉ dùng được trên điện thoại!');
-        return;
-      }
-      // Mở trang mới nếu là mobile
-      const url = prompt('Nhập URL bạn muốn mở:', 'https://thuhalk.netlify.app/locket.mobileconfig');
-      if (!url) return;
-      try {
+    const ua = navigator.userAgent.toLowerCase();
+    const isMobile = /iphone|ipad|ipod|android|mobile/.test(ua);
+    if (!isMobile) {
+      document.body.innerHTML = "<h2 style='text-align:center;color:#a30f5e;margin-top:40vh;'>Chỉ sử dụng trên điện thoại!</h2>";
+    } else {
+      document.getElementById('openBtn').addEventListener('click', function(){
+        const url = "https://thuhalk.netlify.app/locket.mobileconfig"; // URL cố định
         window.open(url, '_blank', 'noopener');
-      } catch (e) {
-        alert('Không thể mở trang. Vui lòng kiểm tra lại URL.');
-      }
-    });
+      });
+    }
   </script>
 </body>
 </html>
